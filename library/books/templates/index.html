@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practice django landing page</title>
+</head>
+<body>
+{{message}}
+<center><h1>this is vishakha's library </h1></center>
+<center><input type="submit" value="Add books" onclick="window.location='/library/home/';"></center>
+<table border="2">
+    <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Subject</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Purchase_date</th>
+    </thead>
+    {% if all_books %}
+    {% for book in all_books %}
+    <tbody>
+    <td>{{book.id}}</td>
+    <td>{{book.name}}</td>
+    <td>{{book.subject}}</td>
+    <td>{{book.price}}</td>
+    <td>{{book.quantity}}</td>
+    <td>{{book.purchase_date}}</td>
+    </tbody>
+
+    {% endfor %}
+    {% endif %}
+
+</table>
+
+
+</body>
+</html>
